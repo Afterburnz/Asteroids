@@ -10,6 +10,8 @@ Spaceship player1;
 
 color black = #000000;
 color white = #ffffff;
+color purple = #a440de;
+color lightPurple = #d285ff;
 void setup(){
   size(1000,1000);
   textAlign(CENTER,CENTER);
