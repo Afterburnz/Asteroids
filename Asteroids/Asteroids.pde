@@ -1,12 +1,17 @@
+import java.util.ArrayList;
+
+
 final int INTRO = 0;
 final int GAME = 1;
 final int PAUSE = 2;
 final int GAMEOVER = 3;
 int mode = 1;
 
-boolean wKey, sKey, dKey, aKey;
+boolean wKey, sKey, dKey, aKey, spacekey;
 
 Spaceship player1;
+
+ArrayList <Bullet> bullets;
 
 color black = #000000;
 color white = #ffffff;
@@ -16,6 +21,8 @@ void setup(){
   size(1000,1000);
   textAlign(CENTER,CENTER);
   rectMode(CENTER);
+  bullets = new ArrayList();
+  
   player1 = new Spaceship();
 }
 
