@@ -1,12 +1,10 @@
-class Bullet {
-  PVector loc;
-  PVector vel;
+class Bullet extends GameObject{
+
   
   
   Bullet() {
   
-    loc = new PVector(player1.loc.x, player1.loc.y);
-    vel = player1.dir.copy();
+    super(player1.loc.copy(), player1.dir.copy());
     vel.setMag(10);
   }
   

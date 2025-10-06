@@ -1,13 +1,12 @@
 void game(){
   background(black);
-  player1.show();
-  player1.act();
+
   
   int i =0;
-  while (i < bullets.size()) {
-    Bullet currentBullet = bullets.get(i);
-    currentBullet.act();
-    currentBullet.show();
+  while (i < objects.size()) {
+    GameObject currentObject = objects.get(i);
+    currentObject.act();
+    currentObject.show();
     i++;
   }
   

@@ -11,7 +11,7 @@ boolean wKey, sKey, dKey, aKey, spacekey;
 
 Spaceship player1;
 
-ArrayList <Bullet> bullets;
+ArrayList <GameObject> objects;
 
 color black = #000000;
 color white = #ffffff;
@@ -21,9 +21,10 @@ void setup(){
   size(1000,1000);
   textAlign(CENTER,CENTER);
   rectMode(CENTER);
-  bullets = new ArrayList();
+  objects = new ArrayList();
   
   player1 = new Spaceship();
+  objects.add(player1);
 }
 
 void draw(){
