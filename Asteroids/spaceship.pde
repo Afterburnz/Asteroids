@@ -1,11 +1,12 @@
-class Spaceship extends GameObject{
+class Spaceship extends GameObject {
 
   PVector dir; //direction
-
+  int cooldown;
 
   Spaceship() {
-    super(width/2, height/2,0,0);
+    super(width/2, height/2, 0, 0);
     dir = new PVector(0.4, 0);
+    cooldown = 0;
   }
 
   void show() {
@@ -37,32 +38,25 @@ class Spaceship extends GameObject{
     move();
     shoot();
     checkForCollisions();
+    wrapAround();
   }
   void move() {
     loc.add(vel);
     vel.setMag( vel.mag() * 0.967 );
     if (wKey) vel.add(dir);
     if (sKey) vel.sub(dir);
-    
+
 
     if (aKey) dir.rotate(-radians(3));
     if (dKey) dir.rotate(radians(3));
   }
   void shoot() {
-      if (spacekey) objects.add(new Bullet() );
+    cooldown --;
+    if (spacekey && cooldown <= 0) {
+      objects.add(new Bullet() );
+      cooldown = 15;
+    }
   }
   void checkForCollisions() {
-    if (loc.x > width) {
-      loc.x = 0;
-    }
-    if (loc.x < 0) {
-      loc.x = width;
-    }
-    if (loc.y > height) {
-      loc.y = 0;
-    }
-    if (loc.y < 0) {
-      loc.y = height;
-    }
   }
 }
