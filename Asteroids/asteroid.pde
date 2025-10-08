@@ -8,17 +8,21 @@ class Asteroid extends GameObject {
     lives = 3;
     d = lives*50;
   }
-
+  
   void show() {
     fill(black);
     stroke(white);
+
     circle(loc.x, loc.y, d);
-    line(loc.x, loc.y, loc.x+lives*50/2, loc.y);
+    strokeWeight(3);
+    line(loc.x-lives*50/2, loc.y, loc.x+lives*50/2, loc.y);
+    line(loc.x, loc.y-lives*50/2, loc.x, loc.y+lives*50/2);
+    strokeWeight(1);
   }
 
   void act() {
     loc.add(vel);
-    wrapAround();
+    astWrapAround();
     checkForCollisions();
   }
   void checkForCollisions() {

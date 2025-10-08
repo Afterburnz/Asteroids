@@ -35,4 +35,18 @@ class GameObject {
       loc.y = height;
     }
   }
+  void astWrapAround() {
+    if (loc.x > width+75) {
+      loc.x = -75;
+    }
+    if (loc.x < -75) {
+      loc.x = width+75;
+    }
+    if (loc.y > height+75) {
+      loc.y = -75;
+    }
+    if (loc.y < -75) {
+      loc.y = height+75;
+    }
+  }  
 }
