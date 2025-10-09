@@ -17,6 +17,10 @@ color black = #000000;
 color white = #ffffff;
 color purple = #a440de;
 color lightPurple = #d285ff;
+
+
+int asteroidTimer = 0;
+
 void setup() {
   size(1000, 1000);
   textAlign(CENTER, CENTER);
@@ -26,11 +30,9 @@ void setup() {
   player1 = new Spaceship();
   objects.add(player1);
 
-  objects.add(new Asteroid());
-  objects.add(new Asteroid());
-  objects.add(new Asteroid());
-  objects.add(new Asteroid());
-  objects.add(new Asteroid());
+
+
+
 }
 
 void draw() {
