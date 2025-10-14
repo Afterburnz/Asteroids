@@ -1,11 +1,25 @@
 class Asteroid extends GameObject {
-
+  float spawn;
   float rotSpeed, angle;
   float r = random(0.5, 2.5);
-  float dr = random(5,25);
-  float lr = random(5,15);
-  Asteroid() {
+  float dr = random(5, 25);
+  float lr = random(5, 15);
+  Asteroid(float x, float y) {
+
+    super(x,y, 1, 1);
+
+    vel.setMag(random(1, 3));
+    vel.rotate(random(TWO_PI));
+    lives = 3;
+    d = lives*50;
+    rotSpeed = random (-2, 2);
+    angle = 0;
+  }
+Asteroid() {
+
     super(random(width), random(height), 1, 1);
+    spawn = random(0, 1);
+
     vel.setMag(random(1, 3));
     vel.rotate(random(TWO_PI));
     lives = 3;
@@ -16,6 +30,7 @@ class Asteroid extends GameObject {
 
   Asteroid(float x, float y, int l) {
     super(x, y, 1, 1);
+    spawn = random(0, 1);
     vel.setMag(random(1, 3));
     vel.rotate(random(TWO_PI));
     lives = l;
