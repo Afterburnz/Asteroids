@@ -4,6 +4,7 @@ class Asteroid extends GameObject {
   float r = random(0.5, 2.5);
   float dr = random(5, 25);
   float lr = random(5, 15);
+
   Asteroid(float x, float y) {
 
     super(x,y, 1, 1);
@@ -72,12 +73,13 @@ Asteroid() {
     int i = 0;
     while (i < objects.size()) {
       GameObject obj = objects.get(i);
-      if (obj instanceof Bullet) {
+      if (obj instanceof Bullet || obj instanceof Spaceship) {
         if (dist(loc.x, loc.y, obj.loc.x, obj.loc.y) < d/2 + obj.d/2) {
           objects.add(new Asteroid(loc.x, loc.y, lives-1));
           objects.add(new Asteroid(loc.x, loc.y, lives-1));
           lives = 0;
-          obj.lives = 0;
+          if (obj instanceof Bullet) obj.lives = 0;
+          score++;
         }
       }
       i++;

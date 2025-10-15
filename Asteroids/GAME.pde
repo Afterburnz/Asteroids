@@ -1,4 +1,5 @@
 float spawn;
+
 void game() {
   background(black);
 
@@ -24,12 +25,20 @@ void game() {
     GameObject currentObject = objects.get(i);
     currentObject.act();
     currentObject.show();
-    if (currentObject.lives == 0)
+    if (currentObject.lives == 0) {
       objects.remove(i);
-    else
+    } else {
 
       i++;
+    }
   }
+
+  if (player1.lives == 0) mode =3;
+  fill(lightBlue);
+  textAlign(LEFT);
+  textSize(40);
+  text("Lives remaining: " +player1.lives, 25, 50);
+  text("Asteroids destroyed: " + score, 25, 100);
 }
 
 void gameClicks() {

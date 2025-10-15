@@ -6,7 +6,7 @@ class GameObject {
   GameObject(float lx, float ly, float vx, float vy) {
     loc = new PVector(lx, ly);
     vel = new PVector(vx, vy);
-    lives = 1;
+    lives = 3;
   }
 
   GameObject(PVector l, PVector v) {

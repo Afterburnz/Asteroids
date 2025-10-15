@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
-
+int score = 0;
 final int INTRO = 0;
 final int GAME = 1;
 final int PAUSE = 2;
-final int GAMEOVER = 3;
-int mode = 1;
+final int ENDSCREEN = 3;
+int mode = 0;
 
 boolean wKey, sKey, dKey, aKey, spacekey;
 
@@ -17,7 +17,8 @@ color black = #000000;
 color white = #ffffff;
 color purple = #a440de;
 color lightPurple = #d285ff;
-
+color lightBlue = #388eff;
+color blue = #024bab;
 
 int asteroidTimer = 0;
 

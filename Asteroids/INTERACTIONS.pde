@@ -15,4 +15,5 @@ void keyReleased() {
   if (key == 'd') dKey = false;
   if (key == 'a') aKey = false;
   if (key == ' ') spacekey = false;
+  if (keyCode == ENTER && mode ==0) mode =1;
 }
