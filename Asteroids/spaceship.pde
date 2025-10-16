@@ -42,7 +42,7 @@ class Spaceship extends GameObject {
       shield --;
       fill(lightBlue);
       stroke(blue);
-      circle(loc.x,loc.y, 2 * shield/3);
+      circle(loc.x, loc.y, 2 * shield/3);
     }
     wrapAround();
   }
@@ -68,6 +68,12 @@ class Spaceship extends GameObject {
     while (i < objects.size()) {
       GameObject obj = objects.get(i);
       if (obj instanceof Asteroid) {
+        if (dist(loc.x, loc.y, obj.loc.x, obj.loc.y)< 5 + obj.d/2) {
+          shield =120;
+          player1.lives --;
+        }
+      }
+      if (obj instanceof Ufo) {
         if (dist(loc.x, loc.y, obj.loc.x, obj.loc.y)< 5 + obj.d/2) {
           shield =120;
           player1.lives --;

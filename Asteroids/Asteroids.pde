@@ -5,6 +5,7 @@ final int INTRO = 0;
 final int GAME = 1;
 final int PAUSE = 2;
 final int ENDSCREEN = 3;
+final int WINSCREEN = 4;
 int mode = 0;
 
 boolean wKey, sKey, dKey, aKey, spacekey;
@@ -19,8 +20,12 @@ color purple = #a440de;
 color lightPurple = #d285ff;
 color lightBlue = #388eff;
 color blue = #024bab;
+color orange = #ff9500;
+color pink = #ff4dbe;
+color lightRed = #ff3d4a;
 
 int asteroidTimer = 0;
+int ufoTimer = 0;
 
 void setup() {
   size(1000, 1000);
@@ -31,7 +36,9 @@ void setup() {
   player1 = new Spaceship();
   objects.add(player1);
 
-
+  PFont mono;
+  mono = createFont("AMORIA.otf", 128);
+  textFont(mono);
 
 
 }
@@ -44,7 +51,9 @@ void draw() {
     game();
   } else if (mode ==PAUSE) {
     pause();
-  } else {
+  } else if (mode==ENDSCREEN) {
     endscreen();
+  } else {
+    winscreen();
   }
 }
