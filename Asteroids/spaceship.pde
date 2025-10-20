@@ -79,6 +79,12 @@ class Spaceship extends GameObject {
           player1.lives --;
         }
       }
+      if (obj instanceof Bullet && ((Bullet) obj).enemy == true) {
+        if (dist(loc.x, loc.y, obj.loc.x, obj.loc.y)< 10+obj.d/2) {
+          shield =120;
+          player1.lives --;
+        }
+      }
       i++;
     }
   }

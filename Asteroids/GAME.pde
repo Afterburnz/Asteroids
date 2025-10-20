@@ -19,7 +19,7 @@ void game() {
       objects.add(new Asteroid(random(width), 1000));
     }
   }
-  if (ufoTimer > 120) {
+  if (ufoTimer > 750) {
     ufoTimer = 0;
     spawn = random(0, 1);
     if (spawn <= 0.25) {
@@ -51,7 +51,7 @@ void game() {
     }
   }
 
-  if (player1.lives == 0) mode =3;
+  if (player1.lives <=0) mode =3;
   fill(lightBlue);
   textAlign(LEFT);
   textSize(40);
