@@ -38,7 +38,7 @@ void game() {
   asteroidTimer ++;
   ufoTimer ++;
   int i =0;
-  
+
   while (i < objects.size()) {
     GameObject currentObject = objects.get(i);
     currentObject.act();
@@ -57,9 +57,5 @@ void game() {
   textSize(40);
   text("Lives remaining: " +player1.lives, 25, 50);
   text("Asteroids destroyed: " + score, 25, 110);
-  if (score >= 100) mode =4;
-}
-
-
-void gameClicks() {
+  if (score >= 1) {println(mode, myButtons[0].clicked, myButtons[1].clicked); mode = WINSCREEN;  }
 }

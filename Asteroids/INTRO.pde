@@ -3,6 +3,6 @@ void intro(){
     fill(white);
   textAlign(CENTER);
   textSize(60);
-  text("Press enter to start", 500,500);
   
+  myButtons[0].show(); 
 }

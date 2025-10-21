@@ -73,12 +73,25 @@ class Asteroid extends GameObject {
     d = lives*50;
     rotSpeed = random (-2, 2);
     angle = 0;
+    while (rCount < red.length) {
+      red[rCount] = int(random(0, 255));
+      rCount++;
+    }
+
+    while (gCount < green.length) {
+      green[gCount] = int(random(0, 255));
+      gCount++;
+    }
+    while (bCount < blue.length) {
+      blue[bCount] = int(random(0, 255));
+      bCount++;
+    }
   }
 
   void show() {
     fill(black);
     int i = 0;
-    stroke(red[i],green[i],blue[i]);
+    stroke(red[i], green[i], blue[i]);
     i++;
     strokeWeight(3);
 

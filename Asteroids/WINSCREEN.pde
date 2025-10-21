@@ -1,8 +1,7 @@
-void winscreen(){
+void winscreen() {
   background(black);
-    fill(white);
+  fill(white);
   textAlign(CENTER);
   textSize(60);
-  text("GG", 500,500);
-  
+  text("GG", 500, 250);
 }
