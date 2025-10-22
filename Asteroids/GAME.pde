@@ -56,6 +56,7 @@ void game() {
   textAlign(LEFT);
   textSize(40);
   text("Lives remaining: " +player1.lives, 25, 50);
+  fill(lightRed);
   text("Asteroids destroyed: " + score, 25, 110);
-  if (score >= 1) {println(mode, myButtons[0].clicked, myButtons[1].clicked); mode = WINSCREEN;  }
+  if (score >= 100) mode = WINSCREEN;
 }

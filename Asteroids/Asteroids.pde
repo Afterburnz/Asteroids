@@ -32,7 +32,7 @@ boolean wasPressed;
 void setup() {
   size(1000, 1000);
   myButtons=new Button[6];
-  myButtons[0] = new Button("Press to start", 500, 500, 600, 300, lightRed, blue);
+  myButtons[0] = new Button("Press to start", 700, 850, 600, 300, lightRed, blue);
   myButtons[1] = new Button("Press to replay", 500, 500, 600, 300, lightRed, blue);
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
@@ -58,7 +58,17 @@ void draw() {
   } else {
     winscreen();
   }
-  if (myButtons[0].clicked && mode ==0) mode =1;
-  if (myButtons[1].clicked && mode ==3 || mode==4) mode =1;
+
+
   click();
+}
+
+void commence() {
+  player1=new Spaceship();
+  objects = new ArrayList();
+  objects.add(player1);
+  asteroidTimer = 0;
+  ufoTimer = 0;
+  score = 0;
+  player1.lives = 3;
 }
