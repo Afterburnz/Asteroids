@@ -106,6 +106,12 @@ class Asteroid extends GameObject {
     circle(0, 0, d);
     line(0-lives*50/2, 0, 0+lives*50/2, 0);
     line(0, 0-lives*50/2, 0, 0+lives*50/2);
+    circle(0, 0, 2*d/3);
+    
+    line(0-lives*22.5/2, 0-lives*22.5/2, 0+lives*22.5/2, 0+lives*22.5/2);
+    line(0+lives*22.5/2, 0-lives*22.5/2, 0-lives*22.5/2, 0+lives*22.5/2);
+    circle(0, 0, d/3);
+
     circle(0-lives*lr, 0+lives*lr, d/dr);
     circle(0+lives*lr, 0-lives*lr, d/dr);
     circle(0-lives*lr, 0-lives*lr, d/dr);

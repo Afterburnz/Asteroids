@@ -3,7 +3,7 @@ class GameObject {
   PVector vel;
   int lives;
   float d;
-  
+
   GameObject(float lx, float ly, float vx, float vy) {
     loc = new PVector(lx, ly);
     vel = new PVector(vx, vy);
@@ -49,5 +49,5 @@ class GameObject {
     if (loc.y < -75) {
       loc.y = height+75;
     }
-  }  
+  }
 }
