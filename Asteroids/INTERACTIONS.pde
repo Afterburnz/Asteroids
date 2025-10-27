@@ -15,6 +15,7 @@ void keyReleased() {
   if (key == 'd') dKey = false;
   if (key == 'a') aKey = false;
   if (key == ' ') spacekey = false;
+  if (key == 'p') mode = 2;
 }
 
 void click(){

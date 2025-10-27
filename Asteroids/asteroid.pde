@@ -127,10 +127,15 @@ class Asteroid extends GameObject {
   }
   void checkForCollisions() {
     int i = 0;
+    int c = 0;
     while (i < objects.size()) {
       GameObject obj = objects.get(i);
       if (obj instanceof Bullet && ((Bullet) obj).enemy == false|| obj instanceof Spaceship) {
         if (dist(loc.x, loc.y, obj.loc.x, obj.loc.y) < d/2 + obj.d/2) {
+          while (c <=25){
+            objects.add(new Particle(loc.x,loc.y,5,120));
+            c++;
+          }
           objects.add(new Asteroid(loc.x, loc.y, lives-1));
           objects.add(new Asteroid(loc.x, loc.y, lives-1));
           lives = 0;

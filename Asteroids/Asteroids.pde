@@ -32,7 +32,7 @@ boolean wasPressed;
 void setup() {
   size(1000, 1000);
   myButtons=new Button[6];
-  myButtons[0] = new Button("Press to start", 700, 850, 600, 300, lightRed, blue);
+  myButtons[0] = new Button("Press to start", width/2, 850, 600, 300, lightRed, blue);
   myButtons[1] = new Button("Press to replay", 500, 500, 600, 300, lightRed, blue);
   textAlign(CENTER, CENTER);
   rectMode(CENTER);

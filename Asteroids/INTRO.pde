@@ -23,6 +23,9 @@ void intro() {
   fill(lightRed);
   textSize(70);
   text("Break 100 asteroids to win!", 500, 250);
+  fill(lightPurple);
+  textSize(80);
+  text("p to pause", 500, 675);
   if (myButtons[0].clicked && mode ==0) mode =1;
 
   myButtons[0].show();

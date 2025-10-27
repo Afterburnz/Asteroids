@@ -52,16 +52,21 @@ class Ufo extends GameObject {
   void shoot() {
     cooldown --;
     if (cooldown <= 0) {
-      objects.add(new Bullet(loc.x,loc.y,player1.loc.x - loc.x, player1.loc.y - loc.y,true));
+      objects.add(new Bullet(loc.x, loc.y, player1.loc.x - loc.x, player1.loc.y - loc.y, true));
       cooldown = 60;
     }
   }
   void checkForCollisions() {
     int i = 0;
+    int c =0;
     while (i < objects.size()) {
       GameObject obj = objects.get(i);
       if (obj instanceof Bullet && ((Bullet) obj).enemy == false|| obj instanceof Spaceship) {
         if (dist(loc.x, loc.y, obj.loc.x, obj.loc.y) < d/2 + obj.d/2) {
+          while (c <=25) {
+            objects.add(new Particle(loc.x, loc.y, 5, 120));
+            c++;
+          }
           objects.add(new Ufo(loc.x, loc.y, lives-1));
           lives = 0;
           if (obj instanceof Bullet) obj.lives = 0;
