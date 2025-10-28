@@ -34,6 +34,7 @@ void setup() {
   myButtons=new Button[6];
   myButtons[0] = new Button("Press to start", width/2, 850, 600, 300, lightRed, blue);
   myButtons[1] = new Button("Press to replay", 500, 500, 600, 300, lightRed, blue);
+  myButtons[2] = new Button("Continue", 500, 700, 600, 300, blue, lightRed);
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
   objects = new ArrayList();
