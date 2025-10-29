@@ -16,14 +16,17 @@ void keyReleased() {
   if (key == 'a') aKey = false;
   if (key == ' ') spacekey = false;
   if (key == 'p') mode = 2;
+  if (key == 'e' && tpTimer <= 0) {
+    tpTimer = 600;
+    player1.teleport();
+  }
 }
 
-void click(){
+void click() {
   mouseReleased = false;
-  if(mousePressed) wasPressed = true;
-  if(wasPressed && !mousePressed) {
+  if (mousePressed) wasPressed = true;
+  if (wasPressed && !mousePressed) {
     mouseReleased = true;
     wasPressed = false;
-  
   }
 }

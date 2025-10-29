@@ -45,6 +45,7 @@ class Spaceship extends GameObject {
       circle(loc.x, loc.y, 2 * shield/3);
     }
     wrapAround();
+    tpTimer --;
   }
   void move() {
     loc.add(vel);
@@ -86,6 +87,45 @@ class Spaceship extends GameObject {
         }
       }
       i++;
+    }
+  }
+
+  void teleport() {
+    boolean found = true;
+    while (found == true) {
+      int i = 0;
+
+      found = false;
+      while (i < objects.size()) {
+        GameObject obj = objects.get(i);
+
+
+        player1.loc.x = random(width);
+        player1.loc.y = random(height);
+        if (obj instanceof Asteroid) {
+          if (dist(loc.x, loc.y, obj.loc.x, obj.loc.y)< 5 + obj.d/2) {
+            player1.loc.x = random(width);
+            player1.loc.y = random(height);
+            found = true;
+          }
+        }
+        if (obj instanceof Ufo) {
+          if (dist(loc.x, loc.y, obj.loc.x, obj.loc.y)< 5 + obj.d/2) {
+            player1.loc.x = random(width);
+            player1.loc.y = random(height);
+            found = true;
+          }
+        }
+        if (obj instanceof Bullet && ((Bullet) obj).enemy == true) {
+          if (dist(loc.x, loc.y, obj.loc.x, obj.loc.y)< 10+obj.d/2) {
+            player1.loc.x = random(width);
+            player1.loc.y = random(height);
+            found = true;
+          }
+        }
+        
+        i++;
+      }
     }
   }
 }

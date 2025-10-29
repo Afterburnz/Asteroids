@@ -9,7 +9,7 @@ final int WINSCREEN = 4;
 int mode = 0;
 
 boolean wKey, sKey, dKey, aKey, spacekey;
-
+int tpTimer = 0;
 Spaceship player1;
 
 ArrayList <GameObject> objects;
