@@ -19,13 +19,13 @@ void intro() {
   textAlign(CENTER);
   textSize(90);
   fill(lightBlue);
-  text("Asteroids from Temu", 500, 150);
+  text("Asteroids from Temu", 500, 100);
   fill(lightRed);
   textSize(70);
-  text("Break 100 asteroids to win!", 500, 250);
+  text("Break 100 asteroids to win!", 500, 200);
   fill(lightPurple);
-  textSize(80);
-  text("p to pause", 500, 675);
+  textSize(60);
+  text("p to pause & e to teleport", 500, 660);
   if (myButtons[0].clicked && mode ==0) mode =1;
 
   myButtons[0].show();

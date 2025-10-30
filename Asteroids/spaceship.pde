@@ -17,6 +17,11 @@ class Spaceship extends GameObject {
     popMatrix();
   }
   void drawShip() {
+    int c = 0;
+    while (c<5) {
+      objects.add(new Particle(player1.loc.x, player1.loc.y, 0, 0, 5, 30));
+      c++;
+    }
     fill(lightPurple);
     stroke(purple);
     strokeWeight(2);
@@ -123,7 +128,7 @@ class Spaceship extends GameObject {
             found = true;
           }
         }
-        
+
         i++;
       }
     }

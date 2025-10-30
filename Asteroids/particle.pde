@@ -15,12 +15,20 @@ class Particle extends GameObject {
     gCount =  int(random(0, 255));
     bCount =  int(random(0, 255));
   }
-
+  Particle(float lx, float ly, float vx,float vy, int d, int time){
+    super(lx,ly,vx,vy);
+    dia = d;
+    lives = 1;
+    timer = time;
+  }
   void show() {
 
     noStroke();
     fill(rCount, gCount, bCount, map(timer, 0, 120, 0, 255));
     circle(loc.x, loc.y, dia);
+    
+    fill(purple,map(timer, 0, 120, 0, 255));
+    circle(loc.x,loc.y,dia);
   }
   void act() {
     move();
