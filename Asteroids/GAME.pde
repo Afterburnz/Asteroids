@@ -1,7 +1,28 @@
 float spawn;
-
+float x [] = new float[100];
+float y [] = new float[100];
+int xCount = 0;
+int yCount = 0;
 void game() {
   background(black);
+  while (xCount < x.length) {
+    x[xCount] = random(width);
+    xCount++;
+  }
+
+  while (yCount < y.length) {
+    y[yCount] = random(height);
+    yCount++;
+  }
+
+  int c = 0;
+
+  while (c < 100) {
+    noStroke();
+    fill(white);
+    square(x[c], y[c], 10);
+    c++;
+  }
 
   if (asteroidTimer > 300) {
     asteroidTimer = 0;
@@ -48,11 +69,11 @@ void game() {
   stroke(white);
   strokeWeight(2);
   fill(pink);
-  text("Teleport:" ,25,180);
+  text("Teleport:", 25, 180);
   rect(225, 135, 250, 60);
   fill(lightPurple);
-  rect(225, 135, map(max(0,tpTimer),0,600,0,250), 60);
-  
+  rect(225, 135, map(max(0, tpTimer), 0, 600, 0, 250), 60);
+
   while (i < objects.size()) {
     GameObject currentObject = objects.get(i);
     currentObject.act();
@@ -69,4 +90,6 @@ void game() {
 
 
   if (score >= 100) mode = WINSCREEN;
+
+  player1.show();
 }

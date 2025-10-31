@@ -18,10 +18,17 @@ class Spaceship extends GameObject {
   }
   void drawShip() {
     int c = 0;
+    int c2= 0;
+
     while (c<5) {
-      objects.add(new Particle(player1.loc.x, player1.loc.y, 0, 0, 5, 30));
+      objects.add(new Particle(player1.loc.x-5, player1.loc.y, 0, 0, 5, 30));
       c++;
     }
+    while (c2<5) {
+      objects.add(new Particle(player1.loc.x+5, player1.loc.y, 0, 0, 5, 30));
+      c2++;  
+  }
+
     fill(lightPurple);
     stroke(purple);
     strokeWeight(2);

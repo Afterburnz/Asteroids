@@ -1,7 +1,3 @@
-//make ship particles behind ship
-//add design (menu screen/asteroids)
-//some new features if time
-
 import java.util.ArrayList;
 Button [] myButtons;
 int score = 0;
