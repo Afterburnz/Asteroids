@@ -1,18 +1,25 @@
 
 void winscreen() {
   background(black);
+  noStroke();
+
+  float lx = 0;
+  float ly=0;
+  float lr=0;
+  float lb=0;
+  while(lb<=255){
+    stroke(lr,0,lb);
+    line(lx,ly,width,ly);
+    ly+=3;
+    lr+=0.5;
+    lb+=0.75;
+  }  
+  
+  
+  
   fill(white);
-  imageMode(CENTER);
-  gif = new PImage[numberOfFrames];
-
-
-  t = t+1;
-  if (t>=numberOfFrames) t = 0;
-  gif[t] = loadImage("frame_"+t+"_delay-0.04s.gif");
-
-  image(gif[t], 500, 500, width, height);
   textAlign(CENTER);
-  textSize(60);
+  textSize(250);
   text("GG", 500, 250);
   if (myButtons[1].clicked && mode ==4) {
     mode =0;
