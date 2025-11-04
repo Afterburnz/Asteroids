@@ -45,7 +45,7 @@ void endscreen() {
   textAlign(CENTER);
   pushMatrix();
   translate(width/2, 250);
-  scale(3, 1.5);
+  scale(2.75, 1.5);
   text("Your bad", 0, 0);
   popMatrix();
   textSize(45);

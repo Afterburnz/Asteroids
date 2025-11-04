@@ -71,6 +71,12 @@ void game() {
   fill(pink);
   text("Teleport:", 25, 180);
   rect(225, 135, 250, 60);
+  textAlign(CENTER, CENTER);
+  textSize(40);
+  fill(purple);
+  text("Ready", 350, 165);
+
+  textAlign(LEFT);
   fill(lightPurple);
   rect(225, 135, map(max(0, tpTimer), 0, 600, 0, 250), 60);
 
