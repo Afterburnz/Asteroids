@@ -21,10 +21,7 @@ class Bullet extends GameObject {
   }
 
   void show() {
-    fill(black);
-    stroke(white);
-    strokeWeight(2);
-    circle(loc.x, loc.y, d);
+    drawBullet();
   }
 
   void act() {
@@ -32,5 +29,11 @@ class Bullet extends GameObject {
     wrapAround();
     timer--;
     if (timer == 0) lives = 0;
+  }
+  void drawBullet(){
+    fill(black);
+    stroke(white);
+    strokeWeight(2);
+    circle(loc.x, loc.y, d);
   }
 }

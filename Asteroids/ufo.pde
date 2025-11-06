@@ -26,19 +26,7 @@ class Ufo extends GameObject {
     d = lives*50;
   }
   void show () {
-    stroke(white);
-    strokeWeight(3);
-    pushMatrix();
-    translate(loc.x, loc.y);
-    fill(pink);
-    circle(0, -lives*15, d/2);
-    fill(lightRed);
-    circle(0, -lives*12.5, d/4);
-    fill(orange);
-    ellipse(0, 0, 10*d/11, d/2);
-
-    strokeWeight(1);
-    popMatrix();
+    drawUfo();
   }
 
 
@@ -75,5 +63,21 @@ class Ufo extends GameObject {
       }
       i++;
     }
+  }
+
+  void drawUfo() {
+    stroke(white);
+    strokeWeight(3);
+    pushMatrix();
+    translate(loc.x, loc.y);
+    fill(pink);
+    circle(0, -lives*15, d/2);
+    fill(lightRed);
+    circle(0, -lives*12.5, d/4);
+    fill(orange);
+    ellipse(0, 0, 10*d/11, d/2);
+
+    strokeWeight(1);
+    popMatrix();
   }
 }
