@@ -8,6 +8,7 @@ void keyPressed() {
   if (key == 'd') dKey = true;
   if (key == 'a') aKey = true;
   if (key == ' ') spacekey = true;
+  if (key == '0') zeroKey = true;
 }
 void keyReleased() {
   if (key == 'w') wKey = false;
@@ -15,6 +16,7 @@ void keyReleased() {
   if (key == 'd') dKey = false;
   if (key == 'a') aKey = false;
   if (key == ' ') spacekey = false;
+  if ( key=='0') zeroKey = false;
   if (key == 'p') mode = 2;
   if (key == 'e' && tpTimer <= 0) {
     tpTimer = 600;

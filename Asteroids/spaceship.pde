@@ -2,11 +2,13 @@ class Spaceship extends GameObject {
   int shield = 0;
   PVector dir; //direction
   int cooldown;
+  int missileCooldown;
 
   Spaceship() {
     super(width/2, height/2, 0, 0);
     dir = new PVector(0.4, 0);
     cooldown = 0;
+    missileCooldown = 0;
   }
 
   void show() {
@@ -26,8 +28,8 @@ class Spaceship extends GameObject {
     }
     while (c2<5) {
       objects.add(new Particle(player1.loc.x+5, player1.loc.y, 0, 0, 5, 30));
-      c2++;  
-  }
+      c2++;
+    }
 
     fill(lightPurple);
     stroke(purple);
@@ -71,9 +73,14 @@ class Spaceship extends GameObject {
   }
   void shoot() {
     cooldown --;
+    missileCooldown --;
     if (spacekey && cooldown <= 0) {
       objects.add(new Bullet() );
       cooldown = 15;
+    }
+    if (zeroKey && missileCooldown <=0) {
+      shootMissile();
+      missileCooldown =167;
     }
   }
   void checkForCollisions() {
@@ -103,8 +110,9 @@ class Spaceship extends GameObject {
   }
 
   void teleport() {
+    int t =0;
     boolean found = true;
-    while (found == true) {
+    while (found == true && t<100) {
       int i = 0;
 
       found = false;
@@ -135,9 +143,26 @@ class Spaceship extends GameObject {
             found = true;
           }
         }
-
+        
         i++;
+        t++;
       }
     }
+  }
+  void shootMissile() {
+    int i=0;
+    float closest = 10000000;
+    GameObject closestObject = player1;
+    while (i<objects.size()) {
+      GameObject obj = objects.get(i);
+      if (obj instanceof Asteroid ||obj instanceof Ufo) {
+        if (dist(loc.x, loc.y, obj.loc.x, obj.loc.y) <= closest) {
+          closest = dist(loc.x, loc.y, obj.loc.x, obj.loc.y);
+          closestObject = obj;
+        }
+      }
+      i++;
+    }
+    objects.add(new Missile(loc.x, loc.y, closestObject.loc.x - loc.x, closestObject.loc.y - loc.y));
   }
 }

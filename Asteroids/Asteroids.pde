@@ -8,7 +8,7 @@ final int ENDSCREEN = 3;
 final int WINSCREEN = 4;
 int mode = 0;
 
-boolean wKey, sKey, dKey, aKey, spacekey;
+boolean wKey, sKey, dKey, aKey, spacekey,zeroKey;
 int tpTimer = 0;
 Spaceship player1;
 

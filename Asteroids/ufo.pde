@@ -49,7 +49,7 @@ class Ufo extends GameObject {
     int c =0;
     while (i < objects.size()) {
       GameObject obj = objects.get(i);
-      if (obj instanceof Bullet && ((Bullet) obj).enemy == false|| obj instanceof Spaceship) {
+      if (obj instanceof Bullet && ((Bullet) obj).enemy == false|| obj instanceof Spaceship || obj instanceof Missile) {
         if (dist(loc.x, loc.y, obj.loc.x, obj.loc.y) < d/2 + obj.d/2) {
           while (c <=25) {
             objects.add(new Particle(loc.x, loc.y, 5, 120));
